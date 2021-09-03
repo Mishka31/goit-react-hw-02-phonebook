@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import ContactForm from "./ContactForm/ContactForm.jsx";
 import ContactList from "./ContactList/ContactList.jsx";
 import Filter from "./Filter/Filter.jsx";
+import s from "./App.module.css";
+
 import { v4 as uuidv4 } from "uuid";
 
 class App extends Component {
@@ -39,9 +41,9 @@ class App extends Component {
 
     return (
       <div>
-        <h1>Phonebook</h1>
+        <h1 className={s.titleH1}>Phonebook</h1>
         <ContactForm onSubmit={this.formSubmitHandler} contactList={contacts} />
-        <h2>Contacts</h2>
+        <h2 className={s.titleH2}>Contacts</h2>
         <Filter value={filter} onSearch={this.onFind} />
         <ContactList contacts={filteredContacts} onDelete={this.onDelete} />
       </div>
