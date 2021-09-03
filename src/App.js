@@ -42,7 +42,7 @@ class App extends Component {
     return (
       <div>
         <h1 className={s.titleH1}>Phonebook</h1>
-        <ContactForm onSubmit={this.formSubmitHandler} contactList={contacts} />
+        <ContactForm onSubmit={this.formSubmitHandler} listArrey={contacts} />
         <h2 className={s.titleH2}>Contacts</h2>
         <Filter value={filter} onSearch={this.onFind} />
         <ContactList contacts={filteredContacts} onDelete={this.onDelete} />

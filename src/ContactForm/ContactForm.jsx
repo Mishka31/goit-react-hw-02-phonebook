@@ -10,6 +10,11 @@ class ContactForm extends Component {
 
   hendkeSubmit = (e) => {
     e.preventDefault();
+    const nameFromArrey = this.props.listArrey.map((c) => c.name.toLowerCase());
+    if (nameFromArrey.includes(this.state.name.toLowerCase())) {
+      alert(`${this.state.name} is already in contacts`);
+      return;
+    }
     this.props.onSubmit(this.state);
     this.reset();
   };
