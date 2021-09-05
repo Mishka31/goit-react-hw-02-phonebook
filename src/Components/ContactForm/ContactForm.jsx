@@ -12,6 +12,7 @@ class ContactForm extends Component {
     e.preventDefault();
     const nameFromArrey = this.props.listArrey.map((c) => c.name.toLowerCase());
     if (nameFromArrey.includes(this.state.name.toLowerCase())) {
+      this.reset();
       alert(`${this.state.name} is already in contacts`);
       return;
     }
